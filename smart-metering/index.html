@@ -1,0 +1,508 @@
+<!-- Cashflow-Sprint Landing – v3. Copy aus echten Prospect-Zitaten (Pascal/Roman/Ben, Vault). Palette B. -->
+<!-- PLATZHALTER: Wordmark "meloa", €490, Kontakt/Impressum. TESTIMONIAL: Roman-Zitat anonymisiert – vor Live-Gang OK einholen. -->
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>meloa — Smart-Meter-Rollout schneller durch den Netzbetreiber</title>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A0C09;--surface:#12150E;--surface-2:#171B12;
+    --border:rgba(228,244,155,.11);--border-strong:rgba(228,244,155,.20);
+    --text:#ECEFE2;--dim:#969C86;
+    --lime:#A3E635;--lime-bright:#BEF264;--yellow:#E4F49B;--stuck:#E0765A;
+    --font-display:"Space Grotesk",system-ui,sans-serif;
+    --font-body:"Inter",system-ui,sans-serif;
+    --font-mono:"JetBrains Mono",ui-monospace,monospace;
+    --wrap:1120px;--ease:cubic-bezier(.2,.65,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--text);font-family:var(--font-body);font-size:17px;line-height:1.7;letter-spacing:-.006em;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+  .bg-grid{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.55;
+    background-image:linear-gradient(rgba(228,244,155,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(228,244,155,.05) 1px,transparent 1px);
+    background-size:58px 58px;
+    -webkit-mask-image:radial-gradient(ellipse 78% 52% at 50% 0%,#000 0%,transparent 72%);
+    mask-image:radial-gradient(ellipse 78% 52% at 50% 0%,#000 0%,transparent 72%)}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  section{padding:110px 0;position:relative}
+  h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.05;letter-spacing:-.02em}
+  h2{font-size:clamp(30px,4.4vw,46px)}
+  p{color:var(--dim)}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:var(--font-mono);font-variant-ligatures:none}
+  .eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);display:inline-block;margin-bottom:20px}
+  .lead{font-size:19px;max-width:56ch}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:600;font-size:16px;padding:15px 26px;border-radius:10px;cursor:pointer;border:1px solid transparent;transition:transform .16s var(--ease),background .16s,box-shadow .2s,color .16s}
+  .btn-primary{background:var(--lime);color:#0A0C09}
+  .btn-primary:hover{background:var(--lime-bright);transform:translateY(-2px);box-shadow:0 14px 36px -10px rgba(163,230,53,.55)}
+  .btn-ghost{background:transparent;color:var(--text);border-color:var(--border-strong)}
+  .btn-ghost:hover{border-color:var(--lime);color:var(--lime)}
+  :focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:6px}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,12,9,.55);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+  nav.scrolled{background:rgba(10,12,9,.82);border-bottom-color:var(--border)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{font-family:var(--font-display);font-weight:700;font-size:20px;letter-spacing:-.02em;display:flex;align-items:center;gap:9px}
+  .brand .dot{width:11px;height:11px;border-radius:3px;background:var(--lime);box-shadow:0 0 14px var(--lime)}
+  .nav-links{display:flex;gap:30px;font-size:15px;color:var(--dim)}
+  .nav-links a{transition:color .15s}.nav-links a:hover{color:var(--text)}
+  @media(max-width:760px){.nav-links{display:none}}
+
+  .hero{padding-top:100px;padding-bottom:108px}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:76px;align-items:center}
+  .hero h1{font-size:clamp(42px,6vw,66px);font-weight:700}
+  .hero h1 em{font-style:normal;color:var(--lime)}
+  .hero .lead{margin:28px 0 38px;max-width:42ch}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-note{margin-top:20px;font-size:13.5px;color:var(--dim);font-family:var(--font-mono)}
+  .hero-glow{position:absolute;left:-10%;top:-6%;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(163,230,53,.17),transparent 62%);filter:blur(34px);pointer-events:none;z-index:-1;animation:float 15s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(26px,-18px)}}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+
+  .case-stack{position:relative}
+  .case-peek{position:absolute;top:-30px;left:42px;right:-14px;z-index:0;background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--border);border-radius:14px;padding:15px 18px;opacity:.7;transform:rotate(1.6deg);box-shadow:0 22px 44px -30px rgba(0,0,0,.85)}
+  @media(max-width:560px){.case-peek{display:none}}
+  .case{position:relative;z-index:1;background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--border);border-radius:16px;padding:24px;box-shadow:0 40px 80px -40px rgba(0,0,0,.85);transition:box-shadow .9s var(--ease)}
+  .case.play{box-shadow:0 40px 80px -40px rgba(0,0,0,.85),0 0 0 1px rgba(163,230,53,.15),0 26px 70px -34px rgba(163,230,53,.22)}
+  .case-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--border);margin-bottom:4px}
+  .case-head.nb{border-bottom:none;padding-bottom:6px}
+  .case-head .t{font-family:var(--font-mono);font-size:12px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+  .row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;font-family:var(--font-mono);font-size:13.5px;border-bottom:1px solid var(--border)}
+  .row.nb{border-bottom:none}
+  .row .k{color:var(--dim)}.row .v{color:var(--text)}
+  .row.old .v{color:var(--stuck)}.row.old .v s{text-decoration-color:rgba(224,118,90,.6)}
+  .row.new .v{color:var(--lime)}
+  .chip{font-family:var(--font-mono);font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+  .chip.red{color:var(--stuck);background:rgba(224,118,90,.12);border:1px solid rgba(224,118,90,.3)}
+  .chip.green{color:var(--lime);background:rgba(163,230,53,.12);border:1px solid rgba(163,230,53,.32)}
+  .case-flip{display:flex;align-items:center;gap:10px;justify-content:center;margin:16px 0 4px;color:var(--dim);font-family:var(--font-mono);font-size:12px;letter-spacing:.1em}
+  .case-flip .line{height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--border-strong),transparent)}
+  .cash{margin-top:16px;padding:12px 14px;border-radius:10px;background:rgba(228,244,155,.08);border:1px solid var(--border-strong);display:flex;justify-content:space-between;align-items:center;font-family:var(--font-mono);font-size:13px}
+  .cash .y{color:var(--yellow);font-weight:600}
+  .case.play .cash{animation:cashglow 1.7s ease .9s}
+  @keyframes cashglow{0%,100%{box-shadow:0 0 0 rgba(228,244,155,0)}45%{box-shadow:0 0 28px -6px rgba(228,244,155,.45)}}
+
+  /* hero use-case deck (klick zum Durchblättern) */
+  .deck-cards{display:grid;cursor:pointer}
+  .uc{grid-area:1/1;background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--border);border-radius:16px;padding:22px 24px;box-shadow:0 40px 80px -40px rgba(0,0,0,.85);transition:transform .7s cubic-bezier(.4,0,.2,1),opacity .7s ease,box-shadow .5s}
+  .uc.p0{transform:translate(0,0) rotate(0) scale(1);opacity:1;z-index:3}
+  .uc.p1{transform:translate(20px,-16px) rotate(2.2deg) scale(.955);opacity:.5;z-index:2}
+  .uc.p2{transform:translate(38px,-30px) rotate(4.2deg) scale(.91);opacity:.28;z-index:1}
+  .deck-cards:hover .uc.p0{box-shadow:0 40px 80px -40px rgba(0,0,0,.85),0 0 0 1px rgba(163,230,53,.16),0 26px 70px -34px rgba(163,230,53,.22)}
+  .deck-dots{display:flex;gap:9px;justify-content:center;margin-top:28px}
+  .deck-dot{width:8px;height:8px;border-radius:50%;background:var(--border-strong);border:none;cursor:pointer;padding:0;transition:background .2s}
+  .deck-dot.on{background:var(--lime)}
+  .deck-hint{text-align:center;margin-top:12px;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--dim)}
+
+  /* Blockierter-Cashflow-Rechner */
+  .calc{display:grid;grid-template-columns:1fr 1fr;max-width:920px;margin:0 auto;border:1px solid var(--border-strong);border-radius:18px;overflow:hidden;background:linear-gradient(180deg,var(--surface-2),var(--surface))}
+  .calc-inputs{padding:38px;display:grid;gap:28px;align-content:center;border-right:1px solid var(--border)}
+  .ci{display:grid;gap:12px}
+  .cl{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14.5px;color:var(--dim)}
+  .cl b{font-family:var(--font-mono);font-size:16px;color:var(--text);font-weight:600;white-space:nowrap}
+  .calc input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:4px;background:var(--border-strong);outline:none;cursor:pointer}
+  .calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px rgba(163,230,53,.5)}
+  .calc input[type=range]::-moz-range-thumb{width:18px;height:18px;border:none;border-radius:50%;background:var(--lime)}
+  .calc-out{padding:38px;display:grid;gap:12px;align-content:center;text-align:center}
+  .co-label{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+  .co-big{font-family:var(--font-mono);font-size:clamp(40px,6.5vw,58px);font-weight:600;color:var(--yellow);letter-spacing:-.02em;line-height:1}
+  .co-calc{font-family:var(--font-mono);font-size:12.5px;color:var(--dim)}
+  .co-sub{font-size:15px;color:var(--dim);margin-top:2px}.co-sub b{color:var(--text);font-family:var(--font-mono)}
+  .co-cta{margin-top:18px;display:grid;gap:14px}.co-cta p{font-size:14.5px;max-width:34ch;margin:0 auto}
+  .co-cta .btn{justify-self:center}
+  @media(max-width:760px){.calc{grid-template-columns:1fr}.calc-inputs{border-right:none;border-bottom:1px solid var(--border)}}
+
+  .head{max-width:60ch;margin-bottom:52px}
+  .head.center{text-align:center;margin-left:auto;margin-right:auto}
+  .head p{margin-top:16px;font-size:18px}.head.center p{margin-left:auto;margin-right:auto}
+
+  .prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:52px}
+  @media(max-width:860px){.prob-grid{grid-template-columns:1fr;gap:36px}}
+  .bul{display:grid;gap:16px;max-width:46ch}
+  .bul li{list-style:none;display:flex;gap:12px;color:var(--dim);font-size:16px}
+  .bul li::before{content:"—";color:var(--stuck);font-family:var(--font-mono);flex:none}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px;transition:transform .2s var(--ease),border-color .2s,background .2s}
+  .stat:hover{transform:translateY(-4px);border-color:var(--border-strong);background:var(--surface-2)}
+  .stat .n{font-family:var(--font-mono);font-size:30px;font-weight:600;color:var(--text);letter-spacing:-.02em}
+  .stat .n.y{color:var(--yellow)}
+  .stat .l{margin-top:8px;font-size:14px;color:var(--dim)}
+  @media(max-width:760px){.stats{grid-template-columns:1fr}}
+
+  /* chart */
+  .chart{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 24px 18px}
+  .chart .cap{font-family:var(--font-mono);font-size:12px;color:var(--dim);letter-spacing:.04em;margin-bottom:12px}
+  .chart svg{width:100%;height:auto;display:block}
+  .cf-area{fill:url(#cfgrad);opacity:0;transition:opacity 1s ease .5s}
+  .chart.show .cf-area{opacity:1}
+  .cf-line{fill:none;stroke:var(--lime);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:300;stroke-dashoffset:300;transition:stroke-dashoffset 1.5s var(--ease) .3s}
+  .chart.show .cf-line{stroke-dashoffset:0}
+  .cf-flat{fill:none;stroke:var(--stuck);stroke-width:2;stroke-linecap:round;opacity:.75}
+  .cf-base{stroke:var(--border-strong);stroke-width:1}
+  .cf-mark{stroke:var(--border-strong);stroke-width:1;stroke-dasharray:3 4}
+  .cf-lab{font-family:var(--font-mono);font-size:11px}
+  .cf-end{fill:var(--lime)}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+  .step{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:30px 26px;transition:transform .2s var(--ease),border-color .2s}
+  .step:hover{transform:translateY(-4px);border-color:var(--border-strong)}
+  .step .ic{width:30px;height:30px;color:var(--lime);margin-bottom:16px}
+  .cht{display:flex;align-items:center;gap:9px;min-width:0}
+  .ai{width:15px;height:15px;color:var(--lime);flex:none}
+  .stat .si{width:22px;height:22px;color:var(--lime);margin-bottom:14px;display:block}
+  .why .card .wi{width:22px;height:22px;color:var(--lime);margin-bottom:12px;display:block}
+  .step .num{counter-increment:s;font-family:var(--font-mono);font-size:12px;color:var(--dim)}
+  .step .num::before{content:"Schritt 0" counter(s)}
+  .step h3{font-size:20px;margin:6px 0 10px}.step p{font-size:15.5px}
+  @media(max-width:760px){.steps{grid-template-columns:1fr}}
+
+  /* why + dotgrid */
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+  @media(max-width:860px){.why-grid{grid-template-columns:1fr;gap:34px}}
+  .why{display:grid;gap:16px}
+  .why .card{border:1px solid var(--border);border-radius:14px;padding:24px;background:linear-gradient(180deg,var(--surface),transparent);transition:transform .2s var(--ease),border-color .2s}
+  .why .card:hover{transform:translateY(-3px);border-color:var(--border-strong)}
+  .why h3{font-size:18px;margin-bottom:8px;color:var(--text)}.why p{font-size:15px}
+  .dotgrid{position:relative;height:300px;border-radius:16px;border:1px solid var(--border);background:radial-gradient(circle,rgba(150,156,134,.32) 1.5px,transparent 1.7px);background-size:28px 28px;background-position:16px 16px;overflow:hidden}
+  .dotgrid .d{position:absolute;width:7px;height:7px;border-radius:50%;transform:translate(-50%,-50%)}
+  .d.red{background:var(--stuck);box-shadow:0 0 9px var(--stuck)}
+  .d.green{background:var(--lime);box-shadow:0 0 9px var(--lime)}
+  .dotgrid .cap{position:absolute;left:20px;bottom:16px;font-family:var(--font-mono);font-size:12px;color:var(--dim)}
+  .aspire{margin-top:28px;border:1px dashed var(--border-strong);border-radius:14px;padding:20px 26px;color:var(--dim);font-size:15px}
+  .aspire b{color:var(--yellow);font-weight:500}
+
+  /* quote */
+  .quote{text-align:center;max-width:820px;margin:0 auto}
+  .quote blockquote{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,3.4vw,38px);line-height:1.2;letter-spacing:-.01em}
+  .quote blockquote em{font-style:normal;color:var(--lime)}
+  .quote .by{margin-top:22px;font-family:var(--font-mono);font-size:13px;color:var(--dim)}
+
+  /* pricing */
+  .price-wrap{display:flex;justify-content:center}
+  .price{width:100%;max-width:620px;background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--border-strong);border-radius:18px;padding:40px;box-shadow:0 50px 90px -50px rgba(163,230,53,.16)}
+  .price .name{font-family:var(--font-mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+  .price .amt{font-family:var(--font-mono);font-size:clamp(28px,4.6vw,40px);font-weight:600;color:var(--yellow);margin:14px 0 6px;letter-spacing:-.01em}
+  .price .sub{color:var(--dim);font-size:14.5px;margin-bottom:26px}
+  .price ul{list-style:none;display:grid;gap:14px;margin-bottom:28px}
+  .price li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--text)}
+  .price li .ck{color:var(--lime);font-family:var(--font-mono);flex:none;margin-top:1px}
+  .price .scar{font-family:var(--font-mono);font-size:13px;color:var(--yellow);margin-top:20px;text-align:center}
+  .price .btn{width:100%;justify-content:center}
+
+  .faq{max-width:760px;margin:0 auto}
+  details{border-bottom:1px solid var(--border);padding:6px 0}
+  summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:20px 0;font-family:var(--font-display);font-weight:500;font-size:18px;color:var(--text);transition:color .15s}
+  summary:hover{color:var(--lime)}
+  summary::-webkit-details-marker{display:none}
+  summary .pl{color:var(--lime);font-family:var(--font-mono);transition:transform .25s var(--ease)}
+  details[open] summary .pl{transform:rotate(45deg)}
+  details p{padding:0 0 22px;font-size:16px;max-width:64ch;animation:fadein .35s ease}
+  @keyframes fadein{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+  .final{text-align:center}
+  .final h2{font-size:clamp(32px,5vw,50px);max-width:18ch;margin:0 auto 18px}
+  .final p{font-size:19px;margin-bottom:32px}
+  .final .glow{position:absolute;left:50%;top:38%;transform:translateX(-50%);width:720px;height:420px;background:radial-gradient(ellipse,rgba(163,230,53,.15),transparent 65%);filter:blur(34px);z-index:-1;pointer-events:none;animation:float 17s ease-in-out infinite}
+
+  footer{border-top:1px solid var(--border);padding:44px 0}
+  .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--dim);font-size:14px}
+  .foot a{transition:color .15s}.foot a:hover{color:var(--text)}
+
+  .reveal{transition:opacity .6s var(--ease),transform .6s var(--ease)}
+  html.js .reveal{opacity:0;transform:translateY(18px)}
+  html.js .reveal.show{opacity:1;transform:none}
+  html.js .case-after{opacity:0;transform:translateY(12px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .case.play .case-after{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}html.js .reveal,html.js .case-after{opacity:1!important;transform:none!important}.cf-line{stroke-dashoffset:0!important}.cf-area{opacity:1!important}}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand"><span class="dot"></span>meloa</div>
+    <div class="nav-links">
+      <a href="#problem">Problem</a>
+      <a href="#sprint">So läuft's</a>
+      <a href="#angebot">Angebot</a>
+      <a href="#faq">Fragen</a>
+    </div>
+    <a href="#angebot" class="btn btn-ghost" style="padding:10px 18px;font-size:15px">Fälle einreichen</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="wrap hero-grid">
+    <div data-stagger>
+      <span class="eyebrow reveal">Für Messstellenbetreiber, die den Smart-Meter-Rollout skalieren</span>
+      <h1 class="reveal">Verbaut, aber <em>euer Umsatz</em> hängt beim Netzbetreiber.</h1>
+      <p class="lead reveal">Ihr verbaut Zähler im Volumen, aber jede Anmeldung hängt beim Netzbetreiber, und ohne bestätigten Vorgang zählt nichts für eure Rollout-Quote. Wir bringen es durch. Ihr zahlt nur pro Vorgang, den wir durchbekommen.</p>
+      <div class="hero-cta reveal">
+        <a href="#angebot" class="btn btn-primary">Zeig uns eure hängenden Fälle →</a>
+        <a href="#sprint" class="btn btn-ghost">Wie es funktioniert</a>
+      </div>
+    </div>
+
+    <div class="deck reveal">
+      <div class="deck-cards" id="deck">
+        <article class="uc">
+          <div class="case-head"><span class="cht"><svg class="ai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span class="t">Solar-PV · 82&nbsp;kWp</span></span><span class="chip red">Hängt</span></div>
+          <div class="row old"><span class="k">Fertigmeldung</span><span class="v">14.11.2025</span></div>
+          <div class="row old"><span class="k">MeLo / MaLo</span><span class="v"><s>keine IDs</s></span></div>
+          <div class="case-flip"><span class="line"></span>meloa<span class="line"></span></div>
+          <div class="case-head nb"><span class="t">gelöst</span><span class="chip green">IDs da</span></div>
+          <div class="row new nb"><span class="k">Abrechnung</span><span class="v">läuft</span></div>
+          <div class="cash"><span>Cashflow</span><span class="y">fließt wieder ↑</span></div>
+        </article>
+        <article class="uc">
+          <div class="case-head"><span class="cht"><svg class="ai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13 8.5 9.5"/><path d="M3.5 18a10 10 0 1 1 17 0"/></svg><span class="t">Smart Meter · iMSys</span></span><span class="chip red">Hängt</span></div>
+          <div class="row old"><span class="k">Anmeldung Netzbetreiber</span><span class="v">seit 5&nbsp;Tagen offen</span></div>
+          <div class="row old"><span class="k">§14a-Steuerbarkeit</span><span class="v"><s>nicht bestätigt</s></span></div>
+          <div class="case-flip"><span class="line"></span>meloa<span class="line"></span></div>
+          <div class="case-head nb"><span class="t">gelöst</span><span class="chip green">aktiv</span></div>
+          <div class="row new nb"><span class="k">Rollout-Quote</span><span class="v">zählt</span></div>
+          <div class="cash"><span>Zähler</span><span class="y">im Feld aktiv ↑</span></div>
+        </article>
+        <article class="uc">
+          <div class="case-head"><span class="cht"><svg class="ai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.5a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg><span class="t">Wärmepumpe · §14a</span></span><span class="chip red">Hängt</span></div>
+          <div class="row old"><span class="k">Inbetriebsetzung</span><span class="v">offen</span></div>
+          <div class="row old"><span class="k">MeLo / MaLo</span><span class="v"><s>keine IDs</s></span></div>
+          <div class="case-flip"><span class="line"></span>meloa<span class="line"></span></div>
+          <div class="case-head nb"><span class="t">gelöst</span><span class="chip green">IDs da</span></div>
+          <div class="row new nb"><span class="k">Abrechnung</span><span class="v">läuft</span></div>
+          <div class="cash"><span>Cashflow</span><span class="y">fließt wieder ↑</span></div>
+        </article>
+      </div>
+      <div class="deck-dots" id="deckDots"></div>
+    </div>
+  </div>
+</header>
+
+<section id="problem">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Das Problem</span>
+      <h2>Der Rollout hängt am Netzbetreiber.</h2>
+      <p>Der Zähler ist verbaut und angemeldet. Aber ohne Rückmeldung des Netzbetreibers und bestätigte Steuerbarkeit ist der Vorgang nicht abgeschlossen: kein Umsatz, und für eure Rollout-Quote zählt er nicht. Je mehr ihr verbaut, desto mehr Vorgänge stapeln sich.</p>
+    </div>
+    <div class="prob-grid">
+      <ul class="bul reveal">
+        <li>Die 5-Tage-Frist läuft, und beim Netzbetreiber kommt oft nichts zurück.</li>
+        <li>Ohne bestätigte §14a-Steuerbarkeit zählt der Vorgang nicht für die Quote.</li>
+        <li>Der UTILMD-Austausch scheitert an VNB-Prozessen und Stammdaten.</li>
+        <li>Rund 850 Netzbetreiber, und jeder macht sein eigenes Ding.</li>
+      </ul>
+      <div class="chart reveal">
+        <div class="cap">Umsatz pro Vorgang — flach, bis der Netzbetreiber durch ist</div>
+        <svg viewBox="0 0 480 210" role="img" aria-label="Cashflow bleibt flach, bis die IDs da sind, dann steigt er an">
+          <defs><linearGradient id="cfgrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#A3E635" stop-opacity=".28"/><stop offset="1" stop-color="#A3E635" stop-opacity="0"/>
+          </linearGradient></defs>
+          <line class="cf-base" x1="28" y1="180" x2="464" y2="180"/>
+          <path class="cf-area" d="M262,150 C300,148 330,120 366,92 S440,44 460,34 L460,180 L262,180 Z"/>
+          <path class="cf-flat" d="M28,152 L86,150 L150,153 L214,151 L262,150"/>
+          <line class="cf-mark" x1="262" y1="34" x2="262" y2="180"/>
+          <path class="cf-line" d="M262,150 C300,148 330,120 366,92 S440,44 460,34"/>
+          <circle class="cf-end" cx="460" cy="34" r="4"/>
+          <text class="cf-lab" x="34" y="140" fill="#E0765A">kein Cashflow</text>
+          <text class="cf-lab" x="270" y="28" fill="#A3E635">IDs da</text>
+        </svg>
+      </div>
+    </div>
+    <div class="stats" data-stagger>
+      <div class="stat reveal"><svg class="si" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div class="n y">5 Tage</div><div class="l">Frist, die der Netzbetreiber oft reißt</div></div>
+      <div class="stat reveal"><svg class="si" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8 11l8-4M8 13l8 4"/></svg><div class="n mono">~850</div><div class="l">Netzbetreiber, jeder mit eigenem Weg</div></div>
+      <div class="stat reveal"><svg class="si" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div class="n mono">keine Antwort</div><div class="l">auf die meisten Anmeldungen</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="sprint">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">So läuft der Sprint</span>
+      <h2>In drei Schritten zu euren IDs.</h2>
+    </div>
+    <div class="steps" data-stagger>
+      <div class="step reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="m7 8 5-5 5 5"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></svg>
+        <div class="num"></div><h3>Fälle übergeben</h3><p>Ihr gebt uns eure hängenden Anlagen und Zähler plus eine Vollmacht. Mehr braucht es von euch nicht.</p></div>
+      <div class="step reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h6"/><path d="M14 12h6"/><circle cx="12" cy="12" r="2.4"/><path d="M12 4v3.6"/><path d="M12 16.4V20"/></svg>
+        <div class="num"></div><h3>Wir übernehmen</h3><p>Komplette Abstimmung mit dem Netzbetreiber: richtiger Kanal, richtiger Ansprechpartner, dranbleiben und eskalieren, bis die MeLo/MaLo da ist.</p></div>
+      <div class="step reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l3 3v15l-2.5-1.5L13 21l-2.5-1.5L8 21l-2-1.2V3z"/><path d="m9 11 2 2 4-4"/></svg>
+        <div class="num"></div><h3>Ihr rechnet ab</h3><p>Vorgang durch, abrechenbar, Cashflow läuft. Ihr zahlt nur für die Vorgänge, die wir durchbekommen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="warum">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Warum es funktioniert</span>
+      <h2>Warum wir schneller durchkommen als euer eigenes Nachfassen.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why" data-stagger>
+        <div class="card reveal"><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.6"/><circle cx="18" cy="5" r="2.6"/><path d="M9 19h7a3 3 0 0 0 0-6H8a3 3 0 0 1 0-6h4"/></svg><h3>Richtiger Kanal, richtiger Ansprechpartner</h3><p>Nicht die allgemeine Adresse, sondern der Weg, der beim jeweiligen Netzbetreiber wirklich zieht.</p></div>
+        <div class="card reveal"><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg><h3>Wir bleiben dran und eskalieren</h3><p>Systematisch nachfassen auf den passenden Stufen, statt alle 10 Tage die gleiche Mail zu schicken.</p></div>
+        <div class="card reveal"><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-9 9-4-4L2 19"/></svg><h3>Wissen, das wächst</h3><p>Die Eigenheiten der Netzbetreiber zu lernen kostet Jahre. Wir tragen diese Kurve, mit jedem Fall geht der nächste schneller.</p></div>
+      </div>
+      <div class="reveal">
+        <div class="dotgrid">
+          <span class="d red" style="left:16%;top:22%"></span>
+          <span class="d red" style="left:63%;top:31%"></span>
+          <span class="d red" style="left:38%;top:58%"></span>
+          <span class="d red" style="left:82%;top:66%"></span>
+          <span class="d red" style="left:25%;top:80%"></span>
+          <span class="d green" style="left:48%;top:26%"></span>
+          <span class="d green" style="left:72%;top:48%"></span>
+          <span class="d green" style="left:30%;top:40%"></span>
+          <span class="d green" style="left:57%;top:72%"></span>
+          <span class="cap">~850 Netzbetreiber, jeder anders. Wir kennen den Weg durch.</span>
+        </div>
+        <div class="aspire">Unser Anspruch: <b>die Eigenheiten jedes Netzbetreibers zu kennen, damit kein Fall mehr hängen bleibt.</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rechner">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Rechnet nach</span>
+      <h2>Wie viel Umsatz hängt gerade fest?</h2>
+      <p>Schiebt eure Zahlen rein, dann seht ihr, wie viel Cashflow der Netzbetreiber gerade bindet.</p>
+    </div>
+    <div class="calc reveal">
+      <div class="calc-inputs">
+        <label class="ci"><span class="cl">Hängende Fälle <b id="vF">10</b></span><input type="range" id="inF" min="1" max="100" value="10" step="1"></label>
+        <label class="ci"><span class="cl">Ertrag pro Fall / Monat <b id="vR">400 €</b></span><input type="range" id="inR" min="100" max="2000" value="400" step="50"></label>
+        <label class="ci"><span class="cl">Ø Verzögerung <b id="vD">2 Monate</b></span><input type="range" id="inD" min="1" max="12" value="2" step="1"></label>
+      </div>
+      <div class="calc-out">
+        <div class="co-label">Blockierter Umsatz</div>
+        <div class="co-big" id="outMain">8.000 €</div>
+        <div class="co-calc" id="outCalc">10 Fälle × 400 € × 2 Monate</div>
+        <div class="co-sub">+ <b id="outMonth">4.000 €</b> pro Monat, solange es hängt</div>
+        <div class="co-cta">
+          <p>So viel könnt ihr freibekommen. Ihr zahlt nur pro Fall, den wir durchbekommen.</p>
+          <a href="#angebot" class="btn btn-primary">Angebot ansehen →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="angebot">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Das Angebot</span>
+      <h2>Ihr habt nichts zu verlieren.</h2>
+      <p>Wir starten mit den Fällen, bei denen ihr selbst nicht mehr weiterkommt. Bewegt sich nichts, zahlt ihr nichts.</p>
+    </div>
+    <div class="price-wrap">
+      <div class="price reveal">
+        <div class="name">Cashflow-Sprint</div>
+        <div class="amt">€490 / Fall</div>
+        <div class="sub">Abgerechnet wird nur, wenn die MeLo/MaLo da ist und ihr wieder abrechnen könnt.</div>
+        <ul>
+          <li><span class="ck">✓</span> Start mit euren 10 am längsten hängenden Fällen</li>
+          <li><span class="ck">✓</span> Done-for-you: komplette Abstimmung mit dem Netzbetreiber</li>
+          <li><span class="ck">✓</span> Nur Erfolg wird bezahlt, kein Retainer, keine Setup-Gebühr</li>
+          <li><span class="ck">✓</span> Statt einer Garantie zeigen wir euch die Vorher/Nachher-Zahlen</li>
+        </ul>
+        <a href="#kontakt" class="btn btn-primary">Fälle einreichen →</a>
+        <div class="scar">Nur 3 Pilot-Partner dieses Quartal.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Fragen</span>
+      <h2>Was ihr euch wahrscheinlich gerade denkt.</h2>
+    </div>
+    <div class="faq" data-stagger>
+      <details class="reveal"><summary>Könnt ihr die Beschleunigung garantieren? <span class="pl">+</span></summary><p>Nein, und das würden wir auch nie behaupten. Genau deshalb zahlt ihr nur, wenn die IDs wirklich da sind. Statt einer Garantie zeigen wir euch die Vorher/Nachher-Zahlen aus dem Piloten.</p></details>
+      <details class="reveal"><summary>Ihr seid ein junges Team, kriegt ihr den Netzbetreiber wirklich bewegt? <span class="pl">+</span></summary><p>Deshalb starten wir mit den Fällen, bei denen ihr selbst schon feststeckt, und ihr zahlt nur bei Erfolg. Das Risiko liegt bei uns, nicht bei euch.</p></details>
+      <details class="reveal"><summary>Wir kommen selbst auch klar, warum abgeben? <span class="pl">+</span></summary><p>Weil ihr nur zahlt, wenn wir schneller sind als ihr. Ihr gebt uns die Fälle, die ohnehin feststecken, und behaltet alles andere. Das Prozesswissen über alle Netzbetreiber intern aufzubauen kostet Jahre, wir bringen es mit, ohne dass ihr Leute einstellen müsst.</p></details>
+      <details class="reveal"><summary>Nur für Zähler, oder auch PV und §14a? <span class="pl">+</span></summary><p>Der Engpass ist überall derselbe: es hängt beim Netzbetreiber, bis der Vorgang durch ist. Wir arbeiten an Zählern, PV-Anlagen und §14a-Aktivierungen.</p></details>
+      <details class="reveal"><summary>Wie viel Aufwand ist das für uns? <span class="pl">+</span></summary><p>Wenig. Ihr gebt uns eine Vollmacht und die Liste der Fälle. Der Punkt ist nicht, euch Arbeit abzunehmen, sondern dass es schneller geht.</p></details>
+      <details class="reveal"><summary>Dürft ihr in unserem Namen mit dem Netzbetreiber sprechen? <span class="pl">+</span></summary><p>Ja, über eine klare Vollmacht mit definiertem Umfang. Wir handeln nur innerhalb dessen, was ihr freigebt.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="final">
+  <div class="glow"></div>
+  <div class="wrap">
+    <h2 class="reveal">Gebt uns eure Fälle, die feststecken.</h2>
+    <p class="reveal">Wenn wir sie nicht durchbekommen, kostet es euch nichts.</p>
+    <div class="reveal"><a href="mailto:lukas.h-nussbaumer@whu.edu" class="btn btn-primary">Fälle zeigen →</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="brand" style="font-size:17px"><span class="dot"></span>meloa</div>
+    <div style="display:flex;gap:26px">
+      <a href="mailto:lukas.h-nussbaumer@whu.edu">lukas.h-nussbaumer@whu.edu</a>
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){const el=e.target,p=el.parentElement;if(p&&p.hasAttribute('data-stagger'))el.style.transitionDelay=([...p.children].indexOf(el)*75)+'ms';el.classList.add('show');io.unobserve(el)}})},{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  const nav=document.querySelector('nav');addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>8),{passive:true});
+  (function(){
+    const deck=document.getElementById('deck'); if(!deck) return;
+    const cards=[...deck.querySelectorAll('.uc')], dw=document.getElementById('deckDots');
+    let front=1, timer=null;
+    const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    cards.forEach((_,i)=>{const b=document.createElement('button');b.className='deck-dot';b.setAttribute('aria-label','Fall '+(i+1));b.addEventListener('click',()=>{front=i;render();restart();});dw.appendChild(b);});
+    const dots=[...dw.children];
+    function render(){cards.forEach((c,i)=>{c.className='uc p'+((i-front+cards.length)%cards.length);});dots.forEach((d,i)=>d.classList.toggle('on',i===front));}
+    function advance(){front=(front+1)%cards.length;render();}
+    function start(){if(!reduce&&!timer)timer=setInterval(advance,5000);}
+    function stop(){clearInterval(timer);timer=null;}
+    function restart(){stop();start();}
+    deck.addEventListener('mouseenter',stop);
+    deck.addEventListener('mouseleave',start);
+    render(); start();
+  })();
+  (function(){
+    const F=document.getElementById('inF'),R=document.getElementById('inR'),D=document.getElementById('inD');
+    if(!F) return;
+    const eur=n=>Math.round(n).toLocaleString('de-DE')+' €';
+    const mon=d=>d+(d===1?' Monat':' Monate'), fae=f=>f+(f===1?' Fall':' Fälle');
+    function calc(){
+      const f=+F.value,r=+R.value,d=+D.value;
+      document.getElementById('vF').textContent=f;
+      document.getElementById('vR').textContent=r.toLocaleString('de-DE')+' €';
+      document.getElementById('vD').textContent=mon(d);
+      document.getElementById('outMain').textContent=eur(f*r*d);
+      document.getElementById('outCalc').textContent=fae(f)+' × '+r.toLocaleString('de-DE')+' € × '+mon(d);
+      document.getElementById('outMonth').textContent=eur(f*r);
+    }
+    [F,R,D].forEach(el=>el.addEventListener('input',calc));
+    calc();
+  })();
+</script>
+</body>
+</html>
