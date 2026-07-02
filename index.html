@@ -100,6 +100,24 @@
   .deck-dot.on{background:var(--lime)}
   .deck-hint{text-align:center;margin-top:12px;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--dim)}
 
+  /* Blockierter-Cashflow-Rechner */
+  .calc{display:grid;grid-template-columns:1fr 1fr;max-width:920px;margin:0 auto;border:1px solid var(--border-strong);border-radius:18px;overflow:hidden;background:linear-gradient(180deg,var(--surface-2),var(--surface))}
+  .calc-inputs{padding:38px;display:grid;gap:28px;align-content:center;border-right:1px solid var(--border)}
+  .ci{display:grid;gap:12px}
+  .cl{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14.5px;color:var(--dim)}
+  .cl b{font-family:var(--font-mono);font-size:16px;color:var(--text);font-weight:600;white-space:nowrap}
+  .calc input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:4px;background:var(--border-strong);outline:none;cursor:pointer}
+  .calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px rgba(163,230,53,.5)}
+  .calc input[type=range]::-moz-range-thumb{width:18px;height:18px;border:none;border-radius:50%;background:var(--lime)}
+  .calc-out{padding:38px;display:grid;gap:12px;align-content:center;text-align:center}
+  .co-label{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+  .co-big{font-family:var(--font-mono);font-size:clamp(40px,6.5vw,58px);font-weight:600;color:var(--yellow);letter-spacing:-.02em;line-height:1}
+  .co-calc{font-family:var(--font-mono);font-size:12.5px;color:var(--dim)}
+  .co-sub{font-size:15px;color:var(--dim);margin-top:2px}.co-sub b{color:var(--text);font-family:var(--font-mono)}
+  .co-cta{margin-top:18px;display:grid;gap:14px}.co-cta p{font-size:14.5px;max-width:34ch;margin:0 auto}
+  .co-cta .btn{justify-self:center}
+  @media(max-width:760px){.calc{grid-template-columns:1fr}.calc-inputs{border-right:none;border-bottom:1px solid var(--border)}}
+
   .head{max-width:60ch;margin-bottom:52px}
   .head.center{text-align:center;margin-left:auto;margin-right:auto}
   .head p{margin-top:16px;font-size:18px}.head.center p{margin-left:auto;margin-right:auto}
@@ -355,6 +373,33 @@
   </div>
 </section>
 
+<section id="rechner">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Rechnet nach</span>
+      <h2>Wie viel Umsatz hängt gerade fest?</h2>
+      <p>Schiebt eure Zahlen rein, dann seht ihr, wie viel Cashflow der Netzbetreiber gerade bindet.</p>
+    </div>
+    <div class="calc reveal">
+      <div class="calc-inputs">
+        <label class="ci"><span class="cl">Hängende Fälle <b id="vF">10</b></span><input type="range" id="inF" min="1" max="100" value="10" step="1"></label>
+        <label class="ci"><span class="cl">Ertrag pro Fall / Monat <b id="vR">400 €</b></span><input type="range" id="inR" min="100" max="2000" value="400" step="50"></label>
+        <label class="ci"><span class="cl">Ø Verzögerung <b id="vD">2 Monate</b></span><input type="range" id="inD" min="1" max="12" value="2" step="1"></label>
+      </div>
+      <div class="calc-out">
+        <div class="co-label">Blockierter Umsatz</div>
+        <div class="co-big" id="outMain">8.000 €</div>
+        <div class="co-calc" id="outCalc">10 Fälle × 400 € × 2 Monate</div>
+        <div class="co-sub">+ <b id="outMonth">4.000 €</b> pro Monat, solange es hängt</div>
+        <div class="co-cta">
+          <p>So viel könnt ihr freibekommen. Ihr zahlt nur pro Fall, den wir durchbekommen.</p>
+          <a href="#angebot" class="btn btn-primary">Angebot ansehen →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="angebot">
   <div class="wrap">
     <div class="head center reveal">
@@ -436,6 +481,23 @@
     deck.addEventListener('mouseenter',stop);
     deck.addEventListener('mouseleave',start);
     render(); start();
+  })();
+  (function(){
+    const F=document.getElementById('inF'),R=document.getElementById('inR'),D=document.getElementById('inD');
+    if(!F) return;
+    const eur=n=>Math.round(n).toLocaleString('de-DE')+' €';
+    const mon=d=>d+(d===1?' Monat':' Monate'), fae=f=>f+(f===1?' Fall':' Fälle');
+    function calc(){
+      const f=+F.value,r=+R.value,d=+D.value;
+      document.getElementById('vF').textContent=f;
+      document.getElementById('vR').textContent=r.toLocaleString('de-DE')+' €';
+      document.getElementById('vD').textContent=mon(d);
+      document.getElementById('outMain').textContent=eur(f*r*d);
+      document.getElementById('outCalc').textContent=fae(f)+' × '+r.toLocaleString('de-DE')+' € × '+mon(d);
+      document.getElementById('outMonth').textContent=eur(f*r);
+    }
+    [F,R,D].forEach(el=>el.addEventListener('input',calc));
+    calc();
   })();
 </script>
 </body>
