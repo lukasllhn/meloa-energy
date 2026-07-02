@@ -5,6 +5,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>meloa — eure fertigen Anlagen wieder abrechnen</title>
+<meta name="description" content="Fertige Anlagen und Zähler hängen beim Netzbetreiber: ohne MeLo/MaLo keine Abrechnung, kein Cashflow. meloa holt die IDs. Bezahlt wird nur pro Fall, der durchkommt.">
+<meta property="og:title" content="meloa — euer Umsatz hängt beim Netzbetreiber. Wir holen ihn.">
+<meta property="og:description" content="Heute die Liste schicken, in 48 Stunden wissen, welche Fälle beweglich sind. Bezahlt wird nur bei Erfolg.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://meloa-energy.vercel.app/">
+<meta property="og:locale" content="de_DE">
+<meta name="theme-color" content="#0A0C09">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='3' y='3' width='18' height='18' rx='5' fill='%23A3E635'/%3E%3C/svg%3E">
+<script defer src="/_vercel/insights/script.js"></script>
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +40,7 @@
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
   section{padding:110px 0;position:relative}
   h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.05;letter-spacing:-.02em}
-  h2{font-size:clamp(30px,4.4vw,46px)}
+  h2{font-size:clamp(32px,4.8vw,52px);letter-spacing:-.028em}
   p{color:var(--dim)}
   a{color:inherit;text-decoration:none}
   .mono{font-family:var(--font-mono);font-variant-ligatures:none}
@@ -196,6 +205,15 @@
   .price .scar{font-family:var(--font-mono);font-size:13px;color:var(--yellow);margin-top:20px;text-align:center}
   .price .btn{width:100%;justify-content:center}
 
+  /* speed-to-value strip */
+  .speed{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:920px;margin:0 auto 44px}
+  .sp{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px;transition:transform .2s var(--ease),border-color .2s}
+  .sp:hover{transform:translateY(-4px);border-color:var(--border-strong)}
+  .sp-when{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);margin-bottom:12px}
+  .sp h3{font-size:19px;margin-bottom:8px}
+  .sp p{font-size:14.5px}
+  @media(max-width:760px){.speed{grid-template-columns:1fr}}
+
   .faq{max-width:760px;margin:0 auto}
   details{border-bottom:1px solid var(--border);padding:6px 0}
   summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:20px 0;font-family:var(--font-display);font-weight:500;font-size:18px;color:var(--text);transition:color .15s}
@@ -247,7 +265,7 @@
       <h1 class="reveal">Installiert, aber <em>euer Umsatz</em> hängt beim Netzbetreiber.</h1>
       <p class="lead reveal">Fertige Anlagen und Zähler hängen beim Netzbetreiber fest: ohne MeLo/MaLo keine Abrechnung, kein Cashflow. Wir holen die IDs. Ihr zahlt nur pro Fall, den wir durchbekommen.</p>
       <div class="hero-cta reveal">
-        <a href="#angebot" class="btn btn-primary">Zeig uns eure hängenden Fälle →</a>
+        <a href="#angebot" class="btn btn-primary">Backlog-Check starten →</a>
         <a href="#sprint" class="btn btn-ghost">Wie es funktioniert</a>
       </div>
     </div>
@@ -408,8 +426,13 @@
   <div class="wrap">
     <div class="head center reveal">
       <span class="eyebrow">Das Angebot</span>
-      <h2>Ihr habt nichts zu verlieren.</h2>
-      <p>Wir starten mit den Fällen, bei denen ihr selbst nicht mehr weiterkommt. Bewegt sich nichts, zahlt ihr nichts.</p>
+      <h2>Von der Liste zum Geld. Ohne Sales-Termine.</h2>
+      <p>Kein Discovery-Call, kein Vertragsmarathon. Ihr schickt eine Liste, wir fangen an.</p>
+    </div>
+    <div class="speed" data-stagger>
+      <div class="sp reveal"><div class="sp-when">Heute</div><h3>Liste schicken</h3><p>Eure hängenden Fälle als Excel oder formlos per Mail. 2 Minuten, keine Vollmacht, kein Vertrag.</p></div>
+      <div class="sp reveal"><div class="sp-when">In 48 Stunden</div><h3>Backlog-Check zurück</h3><p>Kostenlos: welche Fälle beweglich sind, wo genau sie hängen und was wir tun würden.</p></div>
+      <div class="sp reveal"><div class="sp-when">Diese Woche</div><h3>Wir legen los</h3><p>Ihr gebt frei, wir übernehmen die Abstimmung mit dem Netzbetreiber. Bezahlt wird nur bei Erfolg.</p></div>
     </div>
     <div class="price-wrap">
       <div class="price reveal">
@@ -422,8 +445,8 @@
           <li><span class="ck">✓</span> Nur Erfolg wird bezahlt, kein Retainer, keine Setup-Gebühr</li>
           <li><span class="ck">✓</span> Statt einer Garantie zeigen wir euch die Vorher/Nachher-Zahlen</li>
         </ul>
-        <a href="#kontakt" class="btn btn-primary">Fälle einreichen →</a>
-        <div class="scar">Nur 3 Pilot-Partner dieses Quartal.</div>
+        <a href="mailto:lukas.h-nussbaumer@whu.edu?subject=Backlog-Check%3A%20unsere%20h%C3%A4ngenden%20F%C3%A4lle&body=Hi%20meloa-Team%2C%0A%0Aanbei%20unsere%20h%C3%A4ngenden%20F%C3%A4lle%20(Liste%2FExcel%20im%20Anhang%20oder%20direkt%20hier)%3A%0A%0A1)%20Anlage%2FZ%C3%A4hler%3A%20...%0A%20%20%20Netzbetreiber%3A%20...%0A%20%20%20H%C3%A4ngt%20seit%3A%20...%0A%0AFirma%3A%20...%0AAnsprechpartner%3A%20..." class="btn btn-primary">Backlog-Check starten →</a>
+        <div class="scar">Kostenlos &amp; unverbindlich. Antwort in 48 Stunden. Nur 3 Pilot-Partner dieses Quartal.</div>
       </div>
     </div>
   </div>
@@ -436,6 +459,7 @@
       <h2>Was ihr euch wahrscheinlich gerade denkt.</h2>
     </div>
     <div class="faq" data-stagger>
+      <details class="reveal"><summary>Was kostet der Backlog-Check? <span class="pl">+</span></summary><p>Nichts, und er verpflichtet euch zu nichts. Ihr schickt die Liste, wir schicken die Analyse. Erst wenn ihr danach sagt, holt die Fälle, wird es ein Auftrag, und auch dann zahlt ihr nur bei Erfolg.</p></details>
       <details class="reveal"><summary>Könnt ihr die Beschleunigung garantieren? <span class="pl">+</span></summary><p>Nein, und das würden wir auch nie behaupten. Genau deshalb zahlt ihr nur, wenn die IDs wirklich da sind. Statt einer Garantie zeigen wir euch die Vorher/Nachher-Zahlen aus dem Piloten.</p></details>
       <details class="reveal"><summary>Ihr seid ein junges Team, kriegt ihr den Netzbetreiber wirklich bewegt? <span class="pl">+</span></summary><p>Deshalb starten wir mit den Fällen, bei denen ihr selbst schon feststeckt, und ihr zahlt nur bei Erfolg. Das Risiko liegt bei uns, nicht bei euch.</p></details>
       <details class="reveal"><summary>Wir kommen selbst auch klar, warum abgeben? <span class="pl">+</span></summary><p>Weil ihr nur zahlt, wenn wir schneller sind als ihr. Ihr gebt uns die Fälle, die ohnehin feststecken, und behaltet alles andere. Das Prozesswissen über alle Netzbetreiber intern aufzubauen kostet Jahre, wir bringen es mit, ohne dass ihr Leute einstellen müsst.</p></details>
@@ -449,9 +473,9 @@
 <section id="kontakt" class="final">
   <div class="glow"></div>
   <div class="wrap">
-    <h2 class="reveal">Gebt uns eure Fälle, die feststecken.</h2>
-    <p class="reveal">Wenn wir sie nicht durchbekommen, kostet es euch nichts.</p>
-    <div class="reveal"><a href="mailto:lukas.h-nussbaumer@whu.edu" class="btn btn-primary">Fälle zeigen →</a></div>
+    <h2 class="reveal">Schickt uns heute eure Liste.</h2>
+    <p class="reveal">In 48 Stunden wisst ihr, welche eurer Fälle wir durchkriegen. Kostenlos, ohne Vollmacht, ohne Termin.</p>
+    <div class="reveal"><a href="mailto:lukas.h-nussbaumer@whu.edu?subject=Backlog-Check%3A%20unsere%20h%C3%A4ngenden%20F%C3%A4lle&body=Hi%20meloa-Team%2C%0A%0Aanbei%20unsere%20h%C3%A4ngenden%20F%C3%A4lle%20(Liste%2FExcel%20im%20Anhang%20oder%20direkt%20hier)%3A%0A%0A1)%20Anlage%2FZ%C3%A4hler%3A%20...%0A%20%20%20Netzbetreiber%3A%20...%0A%20%20%20H%C3%A4ngt%20seit%3A%20...%0A%0AFirma%3A%20...%0AAnsprechpartner%3A%20..." class="btn btn-primary">Backlog-Check starten →</a></div>
   </div>
 </section>
 
@@ -460,8 +484,8 @@
     <div class="brand" style="font-size:17px"><span class="dot"></span>meloa</div>
     <div style="display:flex;gap:26px">
       <a href="mailto:lukas.h-nussbaumer@whu.edu">lukas.h-nussbaumer@whu.edu</a>
-      <a href="#">Impressum</a>
-      <a href="#">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="impressum.html">Datenschutz</a>
     </div>
   </div>
 </footer>
