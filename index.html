@@ -89,8 +89,8 @@
   @keyframes cashglow{0%,100%{box-shadow:0 0 0 rgba(228,244,155,0)}45%{box-shadow:0 0 28px -6px rgba(228,244,155,.45)}}
 
   /* hero use-case deck (klick zum Durchblättern) */
-  .deck-cards{position:relative;height:348px;cursor:pointer}
-  .uc{position:absolute;left:0;right:0;top:0;background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--border);border-radius:16px;padding:22px 24px;box-shadow:0 40px 80px -40px rgba(0,0,0,.85);transition:transform .5s var(--ease),opacity .5s var(--ease),box-shadow .5s}
+  .deck-cards{display:grid;cursor:pointer}
+  .uc{grid-area:1/1;background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--border);border-radius:16px;padding:22px 24px;box-shadow:0 40px 80px -40px rgba(0,0,0,.85);transition:transform .7s cubic-bezier(.4,0,.2,1),opacity .7s ease,box-shadow .5s}
   .uc.p0{transform:translate(0,0) rotate(0) scale(1);opacity:1;z-index:3}
   .uc.p1{transform:translate(20px,-16px) rotate(2.2deg) scale(.955);opacity:.5;z-index:2}
   .uc.p2{transform:translate(38px,-30px) rotate(4.2deg) scale(.91);opacity:.28;z-index:1}
@@ -475,7 +475,7 @@
     const dots=[...dw.children];
     function render(){cards.forEach((c,i)=>{c.className='uc p'+((i-front+cards.length)%cards.length);});dots.forEach((d,i)=>d.classList.toggle('on',i===front));}
     function advance(){front=(front+1)%cards.length;render();}
-    function start(){if(!reduce&&!timer)timer=setInterval(advance,3000);}
+    function start(){if(!reduce&&!timer)timer=setInterval(advance,5000);}
     function stop(){clearInterval(timer);timer=null;}
     function restart(){stop();start();}
     deck.addEventListener('mouseenter',stop);
