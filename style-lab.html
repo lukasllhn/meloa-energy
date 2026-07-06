@@ -1,0 +1,97 @@
+<html lang="de"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex"><title>meloa · Style-Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Bricolage+Grotesque:wght@600;700;800&family=Space+Mono:wght@400;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&f[]=clash-display@600,700&f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#000;font-family:system-ui}
+  .lab{background:var(--bg);color:var(--tx);padding:72px 56px;position:relative;overflow:hidden}
+  .tag{position:absolute;top:16px;left:56px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--acc);opacity:.8}
+  .grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .eyebrow{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);display:block;margin-bottom:22px}
+  h1{font-family:var(--disp);font-weight:var(--dw,700);font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:var(--ls,-.02em);color:var(--tx)}
+  h1 em{font-style:normal;color:var(--acc)}
+  .lead{font-family:var(--body);font-size:18px;line-height:1.65;color:var(--dim);max-width:42ch;margin:26px 0 34px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:600;font-size:16px;padding:15px 26px;border-radius:12px;background:var(--acc);color:#0c0c08;text-decoration:none}
+  .card{background:var(--surf);border:1px solid var(--bd);border-radius:16px;padding:24px;box-shadow:0 40px 80px -40px rgba(0,0,0,.85)}
+  .chead{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid var(--bd);margin-bottom:4px}
+  .chead.nb{border-bottom:none}
+  .ct{font-family:'Space Mono',monospace;font-size:12px;color:var(--dim);letter-spacing:.06em;text-transform:uppercase}
+  .row{display:flex;justify-content:space-between;padding:12px 0;font-family:'Space Mono',monospace;font-size:13.5px;border-bottom:1px solid var(--bd);color:var(--dim)}
+  .row.nb{border-bottom:none}
+  .rv-red{color:var(--stuck)}.rv-grn{color:var(--acc2)}
+  .chip{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+  .chip.red{color:var(--stuck);background:color-mix(in srgb,var(--stuck) 15%,transparent);border:1px solid color-mix(in srgb,var(--stuck) 35%,transparent)}
+  .chip.grn{color:var(--acc2);background:color-mix(in srgb,var(--acc2) 15%,transparent);border:1px solid color-mix(in srgb,var(--acc2) 35%,transparent)}
+  .flip{text-align:center;font-family:'Space Mono',monospace;font-size:12px;color:var(--dim);letter-spacing:.1em;margin:14px 0 4px}
+  .cash{margin-top:14px;padding:12px 14px;border-radius:10px;background:color-mix(in srgb,var(--acc) 9%,transparent);border:1px solid var(--bd);display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:13px;color:var(--dim)}
+  .cy{color:var(--acc);font-weight:700}
+  .note{max-width:1160px;margin:22px auto 0;font-family:'Space Mono',monospace;font-size:12.5px;color:var(--dim);opacity:.8}
+
+  /* A — Waldboden: tiefes Waldgrün, Butter-Gelb, Salbei, Serif-Display (Fraunces) */
+  .v-a{--bg:#0E140F;--surf:#161E16;--bd:rgba(230,230,200,.12);--tx:#ECEFE2;--dim:#96A08C;--acc:#EAD98A;--acc2:#A6C09A;--stuck:#E0765A;--disp:'Fraunces',serif;--body:'Instrument Sans',sans-serif;--dw:600;--ls:-.01em}
+  /* B — Signal grown-up: warmes Anthrazit, entsättigtes Grün + Butter, Bricolage-Display */
+  .v-b{--bg:#111310;--surf:#1A1D15;--bd:rgba(228,244,155,.12);--tx:#ECEFE4;--dim:#9AA08C;--acc:#8FB33A;--acc2:#D8CF86;--stuck:#E0765A;--disp:'Bricolage Grotesque',sans-serif;--body:'General Sans',sans-serif;--dw:700;--ls:-.02em}
+  /* C — Ink & Butter: warmes Schwarz, Butter-Gelb als DIE Farbe, Clash-Display */
+  .v-c{--bg:#0D0D0B;--surf:#18180F;--bd:rgba(240,226,122,.13);--tx:#F0EFE7;--dim:#9A968C;--acc:#F0E27A;--acc2:#A6C09A;--stuck:#E0765A;--disp:'Clash Display',sans-serif;--body:'Switzer',sans-serif;--dw:600;--ls:-.02em}
+</style></head>
+<body>
+  <section class="lab v-a" id="a"><div class="tag">A · Waldboden — Serif + Butter</div>
+    <div class="grid">
+      <div><span class="eyebrow">Für schnell skalierende Energie-Player</span>
+        <h1>Installiert, aber <em>euer Umsatz</em> hängt beim Netzbetreiber.</h1>
+        <p class="lead">Fertige Anlagen hängen beim Netzbetreiber: ohne MeLo/MaLo keine Abrechnung, kein Cashflow.</p>
+        <a class="btn" href="#">Backlog-Check starten →</a></div>
+      <div class="card">
+        <div class="chead"><span class="ct">Wärmepumpe · §14a</span><span class="chip red">Hängt</span></div>
+        <div class="row"><span>Inbetriebsetzung</span><span class="rv-red">offen</span></div>
+        <div class="row"><span>MeLo / MaLo</span><span class="rv-red">keine IDs</span></div>
+        <div class="flip">— meloa —</div>
+        <div class="chead nb"><span class="ct">gelöst</span><span class="chip grn">IDs da</span></div>
+        <div class="row nb"><span>Abrechnung</span><span class="rv-grn">läuft</span></div>
+        <div class="cash"><span>Cashflow</span><span class="cy">fließt wieder ↑</span></div>
+      </div>
+    </div>
+    <div class="note">BG #0E140F Waldgrün · Akzent Butter #EAD98A · Salbei #A6C09A · Display Fraunces (Serif) · Body Instrument Sans · Mono Space Mono</div>
+  </section>
+
+  <section class="lab v-b" id="b"><div class="tag">B · Signal grown-up — entsättigtes Grün</div>
+    <div class="grid">
+      <div><span class="eyebrow">Für schnell skalierende Energie-Player</span>
+        <h1>Installiert, aber <em>euer Umsatz</em> hängt beim Netzbetreiber.</h1>
+        <p class="lead">Fertige Anlagen hängen beim Netzbetreiber: ohne MeLo/MaLo keine Abrechnung, kein Cashflow.</p>
+        <a class="btn" href="#">Backlog-Check starten →</a></div>
+      <div class="card">
+        <div class="chead"><span class="ct">Wärmepumpe · §14a</span><span class="chip red">Hängt</span></div>
+        <div class="row"><span>Inbetriebsetzung</span><span class="rv-red">offen</span></div>
+        <div class="row"><span>MeLo / MaLo</span><span class="rv-red">keine IDs</span></div>
+        <div class="flip">— meloa —</div>
+        <div class="chead nb"><span class="ct">gelöst</span><span class="chip grn">IDs da</span></div>
+        <div class="row nb"><span>Abrechnung</span><span class="rv-grn">läuft</span></div>
+        <div class="cash"><span>Cashflow</span><span class="cy">fließt wieder ↑</span></div>
+      </div>
+    </div>
+    <div class="note">BG #111310 · Akzent gedämpftes Grün #8FB33A (kein Neon) · Butter #D8CF86 · Display Bricolage Grotesque · Body General Sans · Mono Space Mono</div>
+  </section>
+
+  <section class="lab v-c" id="c"><div class="tag">C · Ink &amp; Butter — Gelb ist die Farbe</div>
+    <div class="grid">
+      <div><span class="eyebrow">Für schnell skalierende Energie-Player</span>
+        <h1>Installiert, aber <em>euer Umsatz</em> hängt beim Netzbetreiber.</h1>
+        <p class="lead">Fertige Anlagen hängen beim Netzbetreiber: ohne MeLo/MaLo keine Abrechnung, kein Cashflow.</p>
+        <a class="btn" href="#">Backlog-Check starten →</a></div>
+      <div class="card">
+        <div class="chead"><span class="ct">Wärmepumpe · §14a</span><span class="chip red">Hängt</span></div>
+        <div class="row"><span>Inbetriebsetzung</span><span class="rv-red">offen</span></div>
+        <div class="row"><span>MeLo / MaLo</span><span class="rv-red">keine IDs</span></div>
+        <div class="flip">— meloa —</div>
+        <div class="chead nb"><span class="ct">gelöst</span><span class="chip grn">IDs da</span></div>
+        <div class="row nb"><span>Abrechnung</span><span class="rv-grn">läuft</span></div>
+        <div class="cash"><span>Cashflow</span><span class="cy">fließt wieder ↑</span></div>
+      </div>
+    </div>
+    <div class="note">BG #0D0D0B warm · Akzent Butter #F0E27A (primär) · Salbei #A6C09A nur für Erfolg · Display Clash Display · Body Switzer · Mono Space Mono</div>
+  </section>
+</body></html>
