@@ -32,13 +32,7 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{background:var(--ink);color:var(--text);font-family:var(--font-body);font-size:17px;line-height:1.7;letter-spacing:-.006em;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
-  .bg-mesh{position:fixed;inset:-22%;z-index:-3;pointer-events:none;background:
-    radial-gradient(44% 46% at 16% 18%,rgba(228,244,155,.075),transparent 68%),
-    radial-gradient(50% 44% at 84% 12%,rgba(163,230,53,.06),transparent 70%),
-    radial-gradient(55% 58% at 70% 82%,rgba(64,66,32,.22),transparent 72%);
-    animation:mesh 24s ease-in-out infinite alternate}
-  @keyframes mesh{from{transform:translate3d(0,0,0) scale(1.02)}to{transform:translate3d(2.5%,-2%,0) scale(1.09)}}
-  .bg-grid{position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.45;
+  .bg-grid{position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.55;
     background-image:linear-gradient(rgba(228,244,155,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(228,244,155,.05) 1px,transparent 1px);
     background-size:58px 58px;
     -webkit-mask-image:radial-gradient(ellipse 78% 52% at 50% 0%,#000 0%,transparent 72%);
@@ -213,6 +207,28 @@
   .price .scar{font-family:var(--font-mono);font-size:13px;color:var(--yellow);margin-top:20px;text-align:center}
   .price .btn{width:100%;justify-content:center}
 
+  /* optionen-vergleich */
+  .opts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .opt{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px;display:flex;flex-direction:column;transition:transform .2s var(--ease),border-color .2s}
+  .opt:hover{transform:translateY(-4px);border-color:var(--border-strong)}
+  .opt h3{font-size:18px;margin-bottom:10px}
+  .opt p{font-size:14.5px;flex:1}
+  .opt .verdict{margin-top:16px;font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;color:var(--stuck)}
+  .opt.lime{border-color:rgba(163,230,53,.35);background:linear-gradient(180deg,var(--surface-2),var(--surface))}
+  .opt.lime .verdict{color:var(--lime)}
+  @media(max-width:900px){.opts{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.opts{grid-template-columns:1fr}}
+
+  /* fall-timeline */
+  .tl{max-width:760px;margin:0 auto}
+  .tle{display:grid;grid-template-columns:110px 1fr;gap:26px;padding:24px 0;border-bottom:1px solid var(--border)}
+  .tle:last-child{border-bottom:none}
+  .tlw{font-family:var(--font-mono);font-size:13px;color:var(--lime);padding-top:3px;white-space:nowrap}
+  .tle h3{font-size:18px;margin-bottom:6px}
+  .tle p{font-size:15px}
+  .tle.pay h3{color:var(--yellow)}
+  @media(max-width:560px){.tle{grid-template-columns:1fr;gap:6px}}
+
   /* speed-to-value strip */
   .speed{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:920px;margin:0 auto 44px}
   .sp{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px;transition:transform .2s var(--ease),border-color .2s}
@@ -250,7 +266,6 @@
 </style>
 </head>
 <body>
-<div class="bg-mesh"></div>
 <div class="bg-grid"></div>
 <div class="bg-grain"></div>
 
@@ -354,6 +369,21 @@
   </div>
 </section>
 
+<section id="optionen">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Eure Optionen</span>
+      <h2>Was ihr mit hängenden Fällen machen könnt.</h2>
+    </div>
+    <div class="opts" data-stagger>
+      <div class="opt reveal"><h3>Selbst nachfassen</h3><p>Kostet wenig, bewegt wenig. Alle 10 Tage eine höfliche Mail, meistens ohne Antwort.</p><div class="verdict">→ der Status quo, der euch hierher gebracht hat</div></div>
+      <div class="opt reveal"><h3>Jemanden einstellen</h3><p>Fixkosten ab Tag eins. Und die Eigenheiten von rund 850 Netzbetreibern lernt niemand im ersten Jahr.</p><div class="verdict">→ teuer, skaliert nicht mit dem Volumen</div></div>
+      <div class="opt reveal"><h3>Abwarten</h3><p>Der Netzbetreiber wird nicht von allein schneller. Mit jedem neuen Projekt stapeln sich die Fälle höher.</p><div class="verdict">→ Cashflow bleibt eingefroren</div></div>
+      <div class="opt lime reveal"><h3>meloa</h3><p>Prozesswissen mitgebracht, kein Headcount, und das Risiko tragen wir.</p><div class="verdict">→ bezahlt wird nur der gelöste Fall</div></div>
+    </div>
+  </div>
+</section>
+
 <section id="sprint">
   <div class="wrap">
     <div class="head reveal">
@@ -405,6 +435,23 @@
   </div>
 </section>
 
+<section id="beispiel">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">So läuft ein Fall</span>
+      <h2>Von der Liste zur MeLo, Woche für Woche.</h2>
+      <p>Ein durchgespieltes Beispiel, wie wir arbeiten. Illustrativ — eure echten Vorher/Nachher-Zahlen liefert der Pilot.</p>
+    </div>
+    <div class="tl" data-stagger>
+      <div class="tle reveal"><div class="tlw">Tag 1</div><div><h3>Fall kommt rein</h3><p>PV-Dach, 74 kWp. Fertigmeldung liegt fünf Monate zurück, keine MeLo/MaLo, der Betreiber wartet auf sein Geld.</p></div></div>
+      <div class="tle reveal"><div class="tlw">Tag 2–3</div><div><h3>Backlog-Check</h3><p>Diagnose: die Inbetriebsetzungsanzeige ist nie im richtigen Portal gelandet, zwei Stammdaten fehlen. Der Fall ist beweglich.</p></div></div>
+      <div class="tle reveal"><div class="tlw">Woche 1</div><div><h3>Paket raus</h3><p>Vollständiges Datenpaket über den Kanal, der bei diesem Netzbetreiber wirklich zieht — mit Frist und Rechtsgrundlage.</p></div></div>
+      <div class="tle reveal"><div class="tlw">Woche 2–4</div><div><h3>Dranbleiben</h3><p>Nachfassen auf den passenden Stufen: Sachbearbeitung, dann Teamleitung. Jede Reaktion dokumentiert.</p></div></div>
+      <div class="tle pay reveal"><div class="tlw">Woche 5</div><div><h3>IDs da, Abrechnung läuft</h3><p>MeLo/MaLo vergeben und schriftlich bestätigt. Die Anlage ist abrechenbar, der Cashflow läuft. Erst jetzt wird abgerechnet: 490&nbsp;€.</p></div></div>
+    </div>
+  </div>
+</section>
+
 <section id="rechner">
   <div class="wrap">
     <div class="head center reveal">
@@ -441,22 +488,23 @@
     </div>
     <div class="speed" data-stagger>
       <div class="sp reveal"><div class="sp-when">Heute</div><h3>Liste schicken</h3><p>Eure hängenden Fälle, so wie die Liste bei euch eh schon liegt. Mehr brauchen wir nicht, keine Vollmacht, nichts zu unterschreiben.</p></div>
-      <div class="sp reveal"><div class="sp-when">In 48 Stunden</div><h3>Backlog-Check zurück</h3><p>Welche Fälle beweglich sind, wo genau sie hängen und was wir tun würden. Kostenlos, weil wir dabei selbst am meisten lernen. Wir kontaktieren niemanden ohne euer Go.</p></div>
+      <div class="sp reveal"><div class="sp-when">In 72 Stunden</div><h3>Backlog-Check zurück</h3><p>Welche Fälle beweglich sind, wo genau sie hängen und was wir tun würden. Kostenlos, weil wir dabei selbst am meisten lernen. Wir kontaktieren niemanden ohne euer Go.</p></div>
       <div class="sp reveal"><div class="sp-when">Diese Woche</div><h3>Wir legen los</h3><p>Ihr gebt frei, wir übernehmen die Abstimmung mit dem Netzbetreiber. Bezahlt wird nur bei Erfolg.</p></div>
     </div>
     <div class="price-wrap">
       <div class="price reveal">
         <div class="name">Cashflow-Sprint</div>
-        <div class="amt">€490 / Fall</div>
-        <div class="sub">Abgerechnet wird nur, wenn die MeLo/MaLo da ist und ihr wieder abrechnen könnt.</div>
+        <div class="amt">€490 / gelöster Fall</div>
+        <div class="sub">Gelöst heißt: das vereinbarte Ziel liegt schriftlich vor, zum Beispiel MeLo/MaLo vergeben und bestätigt. Erst dann wird abgerechnet.</div>
         <ul>
           <li><span class="ck">✓</span> Start mit euren 10 am längsten hängenden Fällen</li>
           <li><span class="ck">✓</span> Done-for-you: komplette Abstimmung mit dem Netzbetreiber</li>
           <li><span class="ck">✓</span> Nur Erfolg wird bezahlt, kein Retainer, keine Setup-Gebühr</li>
           <li><span class="ck">✓</span> Statt einer Garantie zeigen wir euch die Vorher/Nachher-Zahlen</li>
+          <li><span class="ck">✓</span> Nach dem Sprint auf Wunsch Dauerbetrieb: jeder neue hängende Vorgang geht automatisch an uns</li>
         </ul>
         <a href="mailto:lukas.h-nussbaumer@whu.edu?subject=Backlog-Check%3A%20unsere%20h%C3%A4ngenden%20F%C3%A4lle&body=Hi%20meloa-Team%2C%0A%0Aanbei%20unsere%20h%C3%A4ngenden%20F%C3%A4lle%20(Liste%2FExcel%20im%20Anhang%20oder%20direkt%20hier)%3A%0A%0A1)%20Anlage%2FZ%C3%A4hler%3A%20...%0A%20%20%20Netzbetreiber%3A%20...%0A%20%20%20H%C3%A4ngt%20seit%3A%20...%0A%0AFirma%3A%20...%0AAnsprechpartner%3A%20..." class="btn btn-primary">Backlog-Check starten →</a>
-        <div class="scar">Kostenlos &amp; unverbindlich. Antwort in 48 Stunden. Nur 3 Pilot-Partner dieses Quartal.</div>
+        <div class="scar">Der Backlog-Check hat einen Wert von 490 € — für unsere 3 Pilot-Partner im Juli kostenlos, wird bei Beauftragung angerechnet.</div>
       </div>
     </div>
   </div>
@@ -469,10 +517,11 @@
       <h2>Was ihr euch wahrscheinlich gerade denkt.</h2>
     </div>
     <div class="faq" data-stagger>
-      <details class="reveal"><summary>Was kostet der Backlog-Check? <span class="pl">+</span></summary><p>Nichts, und er verpflichtet euch zu nichts. Ihr schickt die Liste, wir schicken die Analyse. Erst wenn ihr danach sagt, holt die Fälle, wird es ein Auftrag, und auch dann zahlt ihr nur bei Erfolg.</p></details>
+      <details class="reveal"><summary>Was kostet der Backlog-Check? <span class="pl">+</span></summary><p>Für unsere Pilot-Partner im Juli nichts, und er verpflichtet euch zu nichts. Ihr schickt die Liste, wir schicken die Analyse. Erst wenn ihr danach sagt, holt die Fälle, wird es ein Auftrag, und auch dann zahlt ihr nur bei Erfolg.</p></details>
+      <details class="reveal"><summary>Was zählt als gelöster Fall? <span class="pl">+</span></summary><p>Beim Check legen wir pro Fall ein Ziel fest, zum Beispiel: MeLo/MaLo vergeben und schriftlich mitgeteilt. Gelöst heißt, dieses Ziel liegt innerhalb des Auftragszeitraums vor. Binär und dokumentierbar, bei der Rechnung gibt es nichts zu interpretieren.</p></details>
       <details class="reveal"><summary>Könnt ihr die Beschleunigung garantieren? <span class="pl">+</span></summary><p>Nein, und das würden wir auch nie behaupten. Genau deshalb zahlt ihr nur, wenn die IDs wirklich da sind. Statt einer Garantie zeigen wir euch die Vorher/Nachher-Zahlen aus dem Piloten.</p></details>
       <details class="reveal"><summary>Ihr seid ein junges Team, kriegt ihr den Netzbetreiber wirklich bewegt? <span class="pl">+</span></summary><p>Deshalb starten wir mit den Fällen, bei denen ihr selbst schon feststeckt, und ihr zahlt nur bei Erfolg. Das Risiko liegt bei uns, nicht bei euch.</p></details>
-      <details class="reveal"><summary>Wir kommen selbst auch klar, warum abgeben? <span class="pl">+</span></summary><p>Weil ihr nur zahlt, wenn wir schneller sind als ihr. Ihr gebt uns die Fälle, die ohnehin feststecken, und behaltet alles andere. Das Prozesswissen über alle Netzbetreiber intern aufzubauen kostet Jahre, wir bringen es mit, ohne dass ihr Leute einstellen müsst.</p></details>
+      <details class="reveal"><summary>Wir kommen selbst auch klar, warum abgeben? <span class="pl">+</span></summary><p>Weil ihr nur zahlt, wenn wir schneller sind als ihr. Ihr gebt uns die Fälle, die ohnehin feststecken, und behaltet alles andere. Das Prozesswissen über alle Netzbetreiber intern aufzubauen kostet Jahre, wir bringen es mit, ohne dass ihr Leute einstellen müsst. Ihr kennt das Modell vom Fördermittelberater: bezahlt wird, was durchkommt. Nur holen wir keinen Zuschuss, sondern euren schon verdienten Umsatz.</p></details>
       <details class="reveal"><summary>Nur für Solar, oder auch Zähler und §14a? <span class="pl">+</span></summary><p>Der Engpass ist überall derselbe: es hängt beim Netzbetreiber, bis es abrechenbar ist. Wir arbeiten an Anlagen, Zählern und §14a-Aktivierungen.</p></details>
       <details class="reveal"><summary>Wie viel Aufwand ist das für uns? <span class="pl">+</span></summary><p>Wenig. Ihr gebt uns eine Vollmacht und die Liste der Fälle. Der Punkt ist nicht, euch Arbeit abzunehmen, sondern dass es schneller geht.</p></details>
       <details class="reveal"><summary>Dürft ihr in unserem Namen mit dem Netzbetreiber sprechen? <span class="pl">+</span></summary><p>Ja, über eine klare Vollmacht mit definiertem Umfang. Wir handeln nur innerhalb dessen, was ihr freigebt.</p></details>
@@ -484,7 +533,7 @@
   <div class="glow"></div>
   <div class="wrap">
     <h2 class="reveal">Schickt uns heute eure Liste.</h2>
-    <p class="reveal">In 48 Stunden wisst ihr, welche eurer Fälle wir durchkriegen. Kostenlos, ohne Vollmacht, ohne Termin.</p>
+    <p class="reveal">In 72 Stunden wisst ihr, welche eurer Fälle wir durchkriegen. Ohne Vollmacht, ohne Termin.</p>
     <div class="reveal"><a href="mailto:lukas.h-nussbaumer@whu.edu?subject=Backlog-Check%3A%20unsere%20h%C3%A4ngenden%20F%C3%A4lle&body=Hi%20meloa-Team%2C%0A%0Aanbei%20unsere%20h%C3%A4ngenden%20F%C3%A4lle%20(Liste%2FExcel%20im%20Anhang%20oder%20direkt%20hier)%3A%0A%0A1)%20Anlage%2FZ%C3%A4hler%3A%20...%0A%20%20%20Netzbetreiber%3A%20...%0A%20%20%20H%C3%A4ngt%20seit%3A%20...%0A%0AFirma%3A%20...%0AAnsprechpartner%3A%20..." class="btn btn-primary">Backlog-Check starten →</a></div>
   </div>
 </section>
